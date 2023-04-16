@@ -84,7 +84,7 @@ public class PlayerContorller2 : MonoBehaviour
 
         }
 
-
+        Debug.Log(moveInput);
 
     }
 

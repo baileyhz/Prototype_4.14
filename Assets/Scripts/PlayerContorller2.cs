@@ -119,14 +119,14 @@ public class PlayerContorller2 : MonoBehaviour
         }
     }
 
-    public void GetAttackInput(InputAction.CallbackContext ctx)
-    {
-        if (ctx.ReadValue<float>() == 0)
-        {
+    //public void GetAttackInput(InputAction.CallbackContext ctx)
+    //{
+    //    if (ctx.ReadValue<float>() == 0)
+    //    {
 
-            animator.SetTrigger(AttackTriggerYHash);
-        }
-    }
+    //        animator.SetTrigger(AttackTriggerYHash);
+    //    }
+    //}
 
     #endregion
 

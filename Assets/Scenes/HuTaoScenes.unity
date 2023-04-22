@@ -1411,7 +1411,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584888062}
-  m_LocalRotation: {x: 0.049374763, y: -0.000000017319138, z: 8.561724e-10, w: 0.99878037}
+  m_LocalRotation: {x: 0.049374763, y: 0.000000017319138, z: -8.561724e-10, w: 0.99878037}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1583,7 +1583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a08fde8e2d4cb940b261fb89a5127fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeaponConfig: {fileID: 0}
+  currentWeaponConfig: {fileID: 11400000, guid: b8aeac906378139459e3b5ce1eac8bfd,
+    type: 2}
   releaseTime: 1
 --- !u!114 &1754581674
 MonoBehaviour:

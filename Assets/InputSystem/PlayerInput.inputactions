@@ -249,8 +249,8 @@
                 {
                     "name": "",
                     "id": "00e66f14-ce1c-481a-944f-058a3ec7439b",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "",
                     "action": "HeavyAttack",

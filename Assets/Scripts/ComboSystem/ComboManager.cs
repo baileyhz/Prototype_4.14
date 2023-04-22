@@ -43,9 +43,9 @@ public class ComboManager : MonoBehaviour
         if (m_isOnNeceTime)
             return;
 
-        if(m_comboInput.GetLightAttactDown())
+        if(m_comboInput.m_lightAttact)
             NormalAttact(true);
-        if(m_comboInput.GetHeavyAttactDown())
+        if(m_comboInput.m_heavyAttact)
             NormalAttact(false);
     }
 

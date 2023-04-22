@@ -307,7 +307,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437742280}
-  m_LocalRotation: {x: 0.0950751, y: -0.0000000042821093, z: 4.0897458e-10, w: 0.9954701}
+  m_LocalRotation: {x: 0.09507509, y: -0.000000015003632, z: 0.0000000014329631, w: 0.99547017}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -385,8 +385,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525194754}
-  m_LocalRotation: {x: 0.0498137, y: 0.0000000021481275, z: -1.0713917e-10, w: 0.99875855}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.16018221, y: 0.0000000055316525, z: -8.9766344e-10, w: 0.9870875}
+  m_LocalPosition: {x: 0, y: 1, z: 0.49999905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1411,7 +1411,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584888062}
-  m_LocalRotation: {x: 0.049374763, y: 0.000000017319138, z: -8.561724e-10, w: 0.99878037}
+  m_LocalRotation: {x: 0.049374774, y: -0.000000011369593, z: 5.6205657e-10, w: 0.9987803}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1528,9 +1528,9 @@ MonoBehaviour:
     m_ActionName: BasicContorller/Battle[/Keyboard/x]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1754581672}
-        m_TargetAssemblyTypeName: PlayerContorller2, Assembly-CSharp
-        m_MethodName: GetAttackInput
+      - m_Target: {fileID: 1754581674}
+        m_TargetAssemblyTypeName: ComboInput, Assembly-CSharp
+        m_MethodName: GetLightAttack
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1543,7 +1543,19 @@ MonoBehaviour:
     m_ActionId: be8f9d0e-8cdc-43de-81b3-113bcd094b27
     m_ActionName: BasicContorller/LighAttack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1754581674}
+        m_TargetAssemblyTypeName: ComboInput, Assembly-CSharp
+        m_MethodName: GetHeavyAttactHold
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: da435708-5411-4c64-a90b-9eaf60167de7
     m_ActionName: BasicContorller/HeavyAttack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
@@ -1598,26 +1610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19efa520b322ae642a11104f6891b192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputActions: {fileID: -944628639613478452, guid: df9cd08ebde7b214489d1435ff125daf,
-    type: 3}
-  m_lightAttact:
-    m_Name: Light Attact
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 3dda2e46-52d5-4936-956c-979ea0e98c17
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  m_heavyAttact:
-    m_Name: Heavy Attact
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: bbe1731e-7174-4d1b-9c7d-aebcee44cd12
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  m_lightAttact: 0
+  m_heavyAttact: 0
 --- !u!1 &1766003525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,8 +1820,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830157128}
-  m_LocalRotation: {x: 0.023629377, y: -0.06022067, z: 0.0014259653, w: 0.99790436}
-  m_LocalPosition: {x: 0.67, y: 1.27, z: -1.98}
+  m_LocalRotation: {x: 0.04937478, y: -0.000000031863472, z: 0.0000000015751732, w: 0.99878037}
+  m_LocalPosition: {x: 0, y: 2, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

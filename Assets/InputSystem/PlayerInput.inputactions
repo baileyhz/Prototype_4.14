@@ -65,7 +65,7 @@
                     "id": "da435708-5411-4c64-a90b-9eaf60167de7",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -249,8 +249,8 @@
                 {
                     "name": "",
                     "id": "00e66f14-ce1c-481a-944f-058a3ec7439b",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "Hold",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "HeavyAttack",

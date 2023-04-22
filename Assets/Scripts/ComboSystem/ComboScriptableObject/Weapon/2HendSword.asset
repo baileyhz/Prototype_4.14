@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc360903f825464897be012358fe668, type: 3}
   m_Name: 2HendSword
   m_EditorClassIdentifier: 
-  m_lightComboConfigs: []
-  m_heavyComboConfigs: []
+  m_lightComboConfigs:
+  - {fileID: 11400000, guid: e339c701e6037494789bc4f8c9aea284, type: 2}
+  - {fileID: 11400000, guid: d7cdcb841992b04469cd230f51e979de, type: 2}
+  - {fileID: 11400000, guid: 79df6df4d89d60440a442ed5e98ffe23, type: 2}
+  - {fileID: 11400000, guid: 9928fdc17ecd8d34984d10149786820c, type: 2}
+  m_heavyComboConfigs:
+  - {fileID: 11400000, guid: a2c4387b9cde9ef47b7362857d05ff20, type: 2}

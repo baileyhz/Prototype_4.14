@@ -28,12 +28,15 @@ public class ComboInput : MonoBehaviour
 
     public void GetLightAttack(InputAction.CallbackContext ctx)
     {
-        m_lightAttact = ctx.ReadValueAsButton();
+        if(ctx.performed)
+            m_lightAttact = true;
+        if (ctx.canceled)
+            m_lightAttact = false;
     }
 
     public void GetHeavyAttactHold(InputAction.CallbackContext ctx)
     {
-        m_heavyAttact = ctx.ReadValueAsButton();
+        m_heavyAttact = ctx.performed;
     }
 
     //public bool GetLightAttactDown() => m_lightAttact.WasPressedThisFrame();

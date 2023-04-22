@@ -43,8 +43,12 @@ public class ComboManager : MonoBehaviour
         if (m_isOnNeceTime)
             return;
 
-        if(m_comboInput.m_lightAttact)
+        if (m_comboInput.m_lightAttact)
+        {
             NormalAttact(true);
+            m_comboInput.m_lightAttact = false;
+        }
+            
         if(m_comboInput.m_heavyAttact)
             NormalAttact(false);
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public class PlayerContorller2 : MonoBehaviour
 {
@@ -20,7 +21,10 @@ public class PlayerContorller2 : MonoBehaviour
     [SerializeField] private float runSpeed = 5.2f;
     [SerializeField] private float turnDelay = 2f;
     [SerializeField] private float BattleSpeed = 3.8f;
-    
+
+    [Header("虛擬相機")]
+    [SerializeField] CinemachineFreeLook thirPersonCam;
+    [SerializeField] CinemachineVirtualCamera lockOnTargetCam;
 
     private bool isJumping;
     private bool isRunning;
@@ -43,7 +47,19 @@ public class PlayerContorller2 : MonoBehaviour
     //index
     private int BattleLayer;
 
-    
+
+    private void OnEnable()
+    {
+        CameraSwitcher.Register(thirPersonCam);
+        CameraSwitcher.Register(lockOnTargetCam);
+        CameraSwitcher.SwitchCamera(thirPersonCam);
+    }
+    private void OnDisable()
+    {
+        CameraSwitcher.UnRegister(thirPersonCam);
+        CameraSwitcher.UnRegister(lockOnTargetCam);
+    }
+
 
     private void Start()
     {
@@ -84,7 +100,7 @@ public class PlayerContorller2 : MonoBehaviour
 
         }
 
-        Debug.Log(moveInput);
+       
 
     }
 
@@ -116,6 +132,14 @@ public class PlayerContorller2 : MonoBehaviour
             float battleFlot = isBattle ? 1f : 0 ;
             animator.SetLayerWeight(BattleLayer,battleFlot);
             //animator.SetBool(BattleHash,isBattle);
+            if (CameraSwitcher.IsActivaCamera(thirPersonCam))
+            {
+                CameraSwitcher.SwitchCamera(lockOnTargetCam);
+            }
+            else if(CameraSwitcher.IsActivaCamera(lockOnTargetCam))
+            {
+                CameraSwitcher.SwitchCamera(thirPersonCam);
+            }
         }
     }
 

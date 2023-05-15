@@ -8,6 +8,8 @@ TagManager:
   - FrontBlock
   - MidBlock
   - HindBlock
+  - CinemachineTarget
+  - Enemy
   layers:
   - Default
   - TransparentFX

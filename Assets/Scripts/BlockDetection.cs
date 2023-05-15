@@ -40,7 +40,7 @@ public class BlockDetection : MonoBehaviour
 
         BlockDecide();
         
-        Debug.Log("F:" + fontTime + " , " + "M:" + MidTime + " , " + "H:" + hindTime );
+        //Debug.Log("F:" + fontTime + " , " + "M:" + MidTime + " , " + "H:" + hindTime );
      }
 
     private void OnTriggerEnter(Collider other)

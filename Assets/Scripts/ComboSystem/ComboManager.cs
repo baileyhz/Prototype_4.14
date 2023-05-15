@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ComboManager : MonoBehaviour
 {
-    public WeaponConfig currentWeaponConfig;
+    public WeaponManager currentWeapon;
     public float releaseTime;
 
     private Animator m_animator;
@@ -78,7 +78,7 @@ public class ComboManager : MonoBehaviour
 
     private void NormalAttact(bool isLight)
     {
-        List<ComboConfig> configs = isLight ? currentWeaponConfig.m_lightComboConfigs : currentWeaponConfig.m_heavyComboConfigs;
+        List<ComboConfig> configs = isLight ? currentWeapon.config.m_lightComboConfigs : currentWeapon.config.m_heavyComboConfigs;
         int comboIdx = isLight ? m_lightAttactIdx : m_heavyAttactIdx;
 
         StartCoroutine(PlayCombo(configs[comboIdx]));

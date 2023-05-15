@@ -25,13 +25,17 @@ public class PlayerContorller2 : MonoBehaviour
     [Header("虛擬相機")]
     [SerializeField] CinemachineFreeLook thirPersonCam;
     [SerializeField] CinemachineVirtualCamera lockOnTargetCam;
+    [SerializeField] CinemachineFreeLook BatteleCam;
+
 
     private bool isJumping;
     private bool isRunning;
     private bool isTurning;
     private bool isAir;
     private bool canTurn = true;
-    private bool isBattle = false;
+    private bool playerMoveInput = false;
+
+    public static bool isBattle = false;
 
     private Vector2 moveInput;
 
@@ -87,8 +91,11 @@ public class PlayerContorller2 : MonoBehaviour
 
         if (isBattle)
         {
-            BattleMove();
             
+            
+            BattleMove();
+            AngleCalculationRotation();
+
         }
         else
         {
@@ -109,6 +116,11 @@ public class PlayerContorller2 : MonoBehaviour
     // 取得移動輸入
     public void GetMoveInput(InputAction.CallbackContext ctx)
     {
+        if (ctx.performed)
+            playerMoveInput = true;
+        if (ctx.canceled)
+            playerMoveInput = false;
+
         moveInput = ctx.ReadValue<Vector2>();
     }
 
@@ -128,6 +140,7 @@ public class PlayerContorller2 : MonoBehaviour
     {
         if (ctx.ReadValue<float>() == 0)
         {
+
             isBattle = !isBattle;
             float battleFlot = isBattle ? 1f : 0 ;
             animator.SetLayerWeight(BattleLayer,battleFlot);
@@ -143,14 +156,7 @@ public class PlayerContorller2 : MonoBehaviour
         }
     }
 
-    //public void GetAttackInput(InputAction.CallbackContext ctx)
-    //{
-    //    if (ctx.ReadValue<float>() == 0)
-    //    {
-
-    //        animator.SetTrigger(AttackTriggerYHash);
-    //    }
-    //}
+    
 
     #endregion
 
@@ -201,10 +207,13 @@ public class PlayerContorller2 : MonoBehaviour
 
     private void BattleMove()
     {
+        //Debug.Log(playerMoveInput);
+
         Vector3 target = new Vector3(enemyTrans.position.x,0,enemyTrans.position.z);
         
-        transform.LookAt(target);
+        //if(playerMoveInput)
         
+
         animator.SetFloat(BattleSpeedZHash, moveInput.x * BattleSpeed*2, 0.1f, Time.deltaTime);
         animator.SetFloat(BattleSpeedXHash, moveInput.y * BattleSpeed*2, 0.1f, Time.deltaTime);
 

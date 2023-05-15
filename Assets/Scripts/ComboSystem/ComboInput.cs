@@ -28,6 +28,9 @@ public class ComboInput : MonoBehaviour
 
     public void GetLightAttack(InputAction.CallbackContext ctx)
     {
+        if (!PlayerContorller2.isBattle)
+            return;
+
         if(ctx.performed)
             m_lightAttact = true;
         if (ctx.canceled)
@@ -36,6 +39,9 @@ public class ComboInput : MonoBehaviour
 
     public void GetHeavyAttactHold(InputAction.CallbackContext ctx)
     {
+        if (!PlayerContorller2.isBattle)
+            return;
+
         m_heavyAttact = ctx.performed;
     }
 

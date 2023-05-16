@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using Unity.Mathematics;
 
 public class PlayerContorller2 : MonoBehaviour
 {
@@ -94,7 +95,7 @@ public class PlayerContorller2 : MonoBehaviour
             
             
             BattleMove();
-            AngleCalculationRotation();
+            
 
         }
         else
@@ -116,10 +117,7 @@ public class PlayerContorller2 : MonoBehaviour
     // 取得移動輸入
     public void GetMoveInput(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
-            playerMoveInput = true;
-        if (ctx.canceled)
-            playerMoveInput = false;
+        
 
         moveInput = ctx.ReadValue<Vector2>();
     }
@@ -147,9 +145,9 @@ public class PlayerContorller2 : MonoBehaviour
             //animator.SetBool(BattleHash,isBattle);
             if (CameraSwitcher.IsActivaCamera(thirPersonCam))
             {
-                CameraSwitcher.SwitchCamera(lockOnTargetCam);
+                CameraSwitcher.SwitchCamera(BatteleCam);
             }
-            else if(CameraSwitcher.IsActivaCamera(lockOnTargetCam))
+            else if(CameraSwitcher.IsActivaCamera(BatteleCam))
             {
                 CameraSwitcher.SwitchCamera(thirPersonCam);
             }
@@ -207,17 +205,17 @@ public class PlayerContorller2 : MonoBehaviour
 
     private void BattleMove()
     {
-        //Debug.Log(playerMoveInput);
-
+       
         Vector3 target = new Vector3(enemyTrans.position.x,0,enemyTrans.position.z);
-        
-        //if(playerMoveInput)
-        
 
-        animator.SetFloat(BattleSpeedZHash, moveInput.x * BattleSpeed*2, 0.1f, Time.deltaTime);
-        animator.SetFloat(BattleSpeedXHash, moveInput.y * BattleSpeed*2, 0.1f, Time.deltaTime);
-
-         
+        Vector3 camForwardProjection = new Vector3(camTransform.forward.x, 0, camTransform.forward.z).normalized;
+        Vector3 playerInput = camForwardProjection * moveInput.y +camTransform.right * moveInput.x;
+        playerInput = playerTransform.InverseTransformVector(playerInput);
+      
+        
+        animator.SetFloat(BattleSpeedZHash, playerInput.x * BattleSpeed * 2, 0.1f, Time.deltaTime);
+        animator.SetFloat(BattleSpeedXHash, playerInput.z * BattleSpeed * 2, 0.1f, Time.deltaTime);
+        
     }
 
     

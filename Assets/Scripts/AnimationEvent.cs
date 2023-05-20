@@ -9,12 +9,12 @@ public class AnimationEvent : MonoBehaviour
     public void EnableDetection()
     {
         comboManager.currentWeapon.ToggleDetection(true);
-        Debug.Log("EnableDetection");
+        //Debug.Log("EnableDetection");
     }
 
     public void DisableDetection()
     {
         comboManager.currentWeapon.ToggleDetection(false);
-        Debug.Log("DisableDetection");
+        //Debug.Log("DisableDetection");
     }
 }

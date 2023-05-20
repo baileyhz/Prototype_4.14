@@ -19,7 +19,7 @@ public class LineAlpha : MonoBehaviour
         lineTrans = transform;
         
         material.SetColor("_Color", new Color(color.r,color.g,color.b,0f));
-        Debug.Log(material.color);
+        //Debug.Log(material.color);
     }
 
     void Update()

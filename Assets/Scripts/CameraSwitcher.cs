@@ -29,6 +29,11 @@ public static class CameraSwitcher
 
     }
 
+    public static void SwitchLookTarget(GameObject target)
+    {
+        activaCamera.LookAt = target.transform;
+    }
+
     public static void Register(CinemachineVirtualCameraBase camera)
     {
         cameras.Add(camera);

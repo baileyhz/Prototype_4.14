@@ -206,12 +206,12 @@ public class PlayerContorller2 : MonoBehaviour
     private void BattleMove()
     {
        
-        Vector3 target = new Vector3(enemyTrans.position.x,0,enemyTrans.position.z);
+       
 
         Vector3 camForwardProjection = new Vector3(camTransform.forward.x, 0, camTransform.forward.z).normalized;
         Vector3 playerInput = camForwardProjection * moveInput.y +camTransform.right * moveInput.x;
         playerInput = playerTransform.InverseTransformVector(playerInput);
-      
+        
         
         animator.SetFloat(BattleSpeedZHash, playerInput.x * BattleSpeed * 2, 0.1f, Time.deltaTime);
         animator.SetFloat(BattleSpeedXHash, playerInput.z * BattleSpeed * 2, 0.1f, Time.deltaTime);

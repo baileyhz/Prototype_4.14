@@ -7,6 +7,7 @@ public class WeaponManager : MonoBehaviour
     public WeaponConfig config;
     public List<Detection> detections = new List<Detection>();
     public bool isOnDetection;
+    [SerializeField] float weaponDamage = 50f;
 
     private void Update()
     {
@@ -21,7 +22,7 @@ public class WeaponManager : MonoBehaviour
             {
                 foreach (var hit in item.GetDetection())
                 {
-                    hit.GetComponent<AgentHitBox>().GetDamage(1, transform.position);
+                    hit.GetComponent<AgentHitBox>().GetDamage(weaponDamage, transform.position);
                 }
             }
         }
@@ -37,7 +38,7 @@ public class WeaponManager : MonoBehaviour
         {
             foreach (var item in detections)
             {
-                item.ClearWasHit();
+                item.ClearWasHit(); 
             }
         }
     }

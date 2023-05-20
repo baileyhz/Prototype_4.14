@@ -8,6 +8,7 @@ public class EnemyManager : MonoBehaviour, IAgent
 
     public void GetDamage(float damage, Vector3 pos)
     {
-        Debug.Log("Hit");
+        Debug.Log("Hit:" + damage);
+        AttackFocusCam.damageCount += damage;
     }
 }

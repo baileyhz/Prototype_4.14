@@ -11,7 +11,7 @@ public class ComboManager : MonoBehaviour
     private ComboInput m_comboInput;
 
     private float m_releaseTimer;
-    private bool m_isOnNeceTime;
+    public static bool m_isOnNeceTime;
     private ComboConfig m_currentComboConfig;
 
     private int m_lightAttactIdx = 0;
@@ -99,4 +99,5 @@ public class ComboManager : MonoBehaviour
         m_lightAttactIdx = 0;
         m_heavyAttactIdx = 0;
     }
+
 }

@@ -9,12 +9,24 @@ public class AnimationEvent : MonoBehaviour
     public void EnableDetection()
     {
         comboManager.currentWeapon.ToggleDetection(true);
+        MotionLockTarget.isAttacking = true;
         //Debug.Log("EnableDetection");
     }
 
     public void DisableDetection()
     {
         comboManager.currentWeapon.ToggleDetection(false);
-        //Debug.Log("DisableDetection");
+		MotionLockTarget.isAttacking = false;
+		//Debug.Log("DisableDetection");
+	}
+
+	public void NowCanTurn()
+	{
+        MotionLockTarget.isTurn = true;
+	}
+
+    public void NowCannotTurn()
+    {
+        MotionLockTarget.isTurn = false;
     }
 }

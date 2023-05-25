@@ -6,7 +6,7 @@ using Cinemachine;
 public class AttackFocusCam : MonoBehaviour
 {
     public static float damageCount;
-    
+    public static bool isAttackFocus = false;
 
     [Header("時間控制相關")]
     private float timer;
@@ -86,7 +86,9 @@ public class AttackFocusCam : MonoBehaviour
         else if (damageCount >= threshold_3)
         {
             //Debug.Log("threshold_3");
-            CameraSwitcher.SwitchCamera(Threshold_3Cam);
+            isAttackFocus = true;
+
+			CameraSwitcher.SwitchCamera(Threshold_3Cam);
             
             if (!CameraSwitcher.IsActivaCamera(Threshold_3Cam))
             {
